@@ -13,11 +13,12 @@ def set_env_if_missing(key, value):
 
 if cfg:
     set_env_if_missing("BOT_TOKEN", getattr(cfg, "BOT_TOKEN", None))
-    set_env_if_missing("API_ID", getattr(cfg, "API_ID", None))
-    set_env_if_missing("API_HASH", getattr(cfg, "API_HASH", None))
+    set_env_if_missing("TELEGRAM_API", getattr(cfg, "TELEGRAM_API", None))
+    set_env_if_missing("TELEGRAM_HASH", getattr(cfg, "TELEGRAM_HASH", None))
     set_env_if_missing("OWNER_ID", getattr(cfg, "OWNER_ID", None))
     set_env_if_missing("DATABASE_URL", getattr(cfg, "DATABASE_URL", None))
     set_env_if_missing("GDRIVE_FOLDER_ID", getattr(cfg, "GDRIVE_FOLDER_ID", None))
+
 
 # Launch bot
 os.execvp(sys.executable, [sys.executable, "-m", "bot"])
